@@ -11,7 +11,7 @@ Negócio: Acreditamos que uma intervenção na plataforma existente irá agregar
 ###  3) Mobile
 
 Para essa intervenção usamos react-native para demontrar a usabilidade das funcionalidade sugeridas, o API:
- #### Menu: Erica (boot)
+ #### Menu: Erica (bot)
  #### Funções:
  - Automatizar Compras
  - Auxiliar Compras
