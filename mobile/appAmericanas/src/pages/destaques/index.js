@@ -9,9 +9,9 @@ export default function De() {
   return (
 	<View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
 		 <Image
-                    source={require('../../assets/home.jpeg')}
-                    style={styles.imagem}
-                />
+            source={require('../../assets/home.jpeg')}
+            style={styles.imagem}
+        />
 	</View>
   );
 }
