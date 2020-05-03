@@ -1,6 +1,6 @@
 # MegaHack2020: Desafio Americanas
 
-![](http://i.picasion.com/pic90/4104cac8655194f63ba1147a81273528.gif)
+![](http://i.picasion.com/pic90/4b8a866cda6b1cacf6f3bbfcb228a064.gif)
 
 Repositorio para implentações no aplicativo e no site 
 
