@@ -162,6 +162,9 @@ export default function Home({navigation}) {
                     }
                 />
             </TouchableHighlight>
+            <Text style={{color: 'white', fontSize: 20}}>
+                {modalVisible ? 'Estou te ouvindo 👂' : ''}
+            </Text>
         </View>
     );
 }
