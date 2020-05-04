@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
 import homeImage from '../../assets/home.jpeg';
@@ -18,6 +18,10 @@ export default function De() {
     );
 }
 
+const dimensions = Dimensions.get('window');
+const imageWidth = 720;
+const ratio = dimensions.width / imageWidth;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -26,7 +30,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F00',
     },
     imagem: {
-        width: 420,
-        height: 680,
+        width: dimensions.width,
+        height: 1193 * ratio,
     },
 });
