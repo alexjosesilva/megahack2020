@@ -13,7 +13,7 @@ import {
     TextInput,
     TouchableHighlight,
 } from 'react-native';
-import Voice from 'react-native-voice';
+import Voice from '@react-native-community/voice';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -95,17 +95,18 @@ import mic_entrada from '../../assets/mic_entrada.png';
 
 export default function Home() {
     const [modalVisible, setModalVisible] = useState(false);
+    const [text, setText] = useState('');
 
     useEffect(() => {
-        Voice._onSpeechResults = results => {
-            console.log(JSON.stringify(results));
+        Voice.onSpeechResults = results => {
+            setText(results.value[0]);
         };
     }, []);
 
     return (
         <View style={styles.container}>
             <Image source={logoAmericanas} />
-            <Text style={{color: 'white', fontSize: 20, marginTop: 20}}>
+            <Text style={{color: 'white', fontSize: 20, marginTop: 40}}>
                 Fale com a
             </Text>
             {/* <Image source={erica_nome} /> */}
@@ -117,9 +118,13 @@ export default function Home() {
             <View style={styles.searchSection}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Fale comigo..."
+                    placeholder={
+                        modalVisible ? 'Fale o produto' : 'Digite o produto'
+                    }
                     underlineColorAndroid="transparent"
                     multiline
+                    value={text}
+                    onChangeText={setText}
                 />
                 <Icon
                     style={styles.searchIcon}
@@ -130,7 +135,7 @@ export default function Home() {
             </View>
             <TouchableHighlight
                 onPress={() => {
-                    if (modalVisible) {
+                    if (!modalVisible) {
                         Voice.start('pt-BR');
                     } else {
                         Voice.stop();
