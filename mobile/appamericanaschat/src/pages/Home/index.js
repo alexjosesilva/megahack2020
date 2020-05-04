@@ -93,7 +93,7 @@ import mic_entrada from '../../assets/mic_entrada.png';
 //     },
 // });
 
-export default function Home() {
+export default function Home({navigation}) {
     const [modalVisible, setModalVisible] = useState(false);
     const [text, setText] = useState('');
 
@@ -126,12 +126,15 @@ export default function Home() {
                     value={text}
                     onChangeText={setText}
                 />
-                <Icon
-                    style={styles.searchIcon}
-                    name="search"
-                    size={30}
-                    color="#F00"
-                />
+                <TouchableHighlight
+                    onPress={() => navigation.navigate('destaques')}>
+                    <Icon
+                        style={styles.searchIcon}
+                        name="search"
+                        size={30}
+                        color="#F00"
+                    />
+                </TouchableHighlight>
             </View>
             <TouchableHighlight
                 onPress={() => {
