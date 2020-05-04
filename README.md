@@ -1,6 +1,6 @@
 # MegaHack2020: Desafio Americanas
 
-![](http://i.picasion.com/pic90/4104cac8655194f63ba1147a81273528.gif)
+![](http://i.picasion.com/pic90/4b8a866cda6b1cacf6f3bbfcb228a064.gif)
 
 Repositorio para implentações no aplicativo e no site 
 
@@ -11,7 +11,7 @@ Negócio: Acreditamos que uma intervenção na plataforma existente irá agregar
 ###  3) Mobile
 
 Para essa intervenção usamos react-native para demontrar a usabilidade das funcionalidade sugeridas, o API:
- #### Menu: Erica (boot)
+ #### Menu: Erica (bot)
  #### Funções:
  - Automatizar Compras
  - Auxiliar Compras
