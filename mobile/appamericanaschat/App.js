@@ -36,9 +36,6 @@ import erica from './src/pages/erica';
 
 import CustomDrawer from './src/components/CustomDrawer';
 
-// import Icon from 'react-native-vector-icons/MaterialIcons';
-// Icon.loadFont();
-
 const Routes = createAppContainer(
     createDrawerNavigator(
         {
