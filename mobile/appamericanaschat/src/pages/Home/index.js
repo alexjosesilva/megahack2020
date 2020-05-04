@@ -127,7 +127,11 @@ export default function Home({navigation}) {
                     onChangeText={setText}
                 />
                 <TouchableHighlight
-                    onPress={() => navigation.navigate('destaques')}>
+                    onPress={() =>
+                        navigation.navigate('destaques', {
+                            text,
+                        })
+                    }>
                     <Icon
                         style={styles.searchIcon}
                         name="search"
