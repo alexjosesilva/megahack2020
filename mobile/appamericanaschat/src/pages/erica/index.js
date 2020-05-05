@@ -4,16 +4,18 @@
 
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
+import EricaBot from '../../components/EricaBot';
 
 export default function Erica() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.texto}>Erica - Seu Assitente de Compas</Text>
-            <Image
-                source={require('../../assets/erica.jpeg')}
-                style={styles.imagem}
-            />
-        </View>
+        <EricaBot />
+        // <View style={styles.container}>
+        //     <Text style={styles.texto}>Erica - Seu Assitente de Compas</Text>
+        //     <Image
+        //         source={require('../../assets/erica.jpeg')}
+        //         style={styles.imagem}
+        //     />
+        // </View>
     );
 }
 
