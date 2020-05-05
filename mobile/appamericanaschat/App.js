@@ -20,6 +20,7 @@ import {
 
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator} from 'react-navigation-drawer';
+import {Provider} from 'react-redux';
 
 import Home from './src/pages/Home';
 import Contato from './src/pages/Contato';
@@ -35,6 +36,8 @@ import ache_uma_loja from './src/pages/ache_uma_loja';
 import erica from './src/pages/erica';
 
 import CustomDrawer from './src/components/CustomDrawer';
+
+import store from './src/store';
 
 const Routes = createAppContainer(
     createDrawerNavigator(
@@ -59,4 +62,10 @@ const Routes = createAppContainer(
     ),
 );
 
-export default Routes;
+const App = () => (
+    <Provider store={store}>
+        <Routes />
+    </Provider>
+);
+
+export default App;
