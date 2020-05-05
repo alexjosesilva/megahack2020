@@ -10,8 +10,7 @@ const client = {
 const ericaAssistent = {
     _id: 2,
     name: 'Erica',
-    avatar:
-        'https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/45/2c/4f/452c4f57-2a57-4909-fd51-602b45a96c5d/source/256x256bb.jpg',
+    avatar: 'https://i.imgur.com/HyzX9nH.png',
 };
 
 export default function EricaBot() {
@@ -24,45 +23,70 @@ export default function EricaBot() {
             user: ericaAssistent,
         },
         {
-            _id: 2,
-            text: 'Gostaria de um biscoito de chocolate',
-            createdAt: new Date(),
-            user: client,
-        },
-        {
-            _id: 3,
-            text: 'Produtos disponíveis:',
+            _id: 4,
+            text: `Produto pedido: "Samsung Galaxy A10"
+Confirma ?`,
             quickReplies: {
                 type: 'radio', // or 'checkbox',
                 keepIt: true,
                 values: [
                     {
-                        title: 'Wafer Aymoré',
-                        value: 'wafer-aymore',
+                        title: 'Sim',
+                        value: 'sim',
                     },
                     {
-                        title: 'Danix',
-                        value: 'danix',
-                    },
-                    {
-                        title: 'Rosquinhas Vilma',
-                        value: 'rosquinhas-vilma',
-                    },
-                    {
-                        title: 'Teens',
-                        value: 'teens',
+                        title: 'Não',
+                        value: 'nao',
                     },
                 ],
             },
             createdAt: new Date(),
             user: ericaAssistent,
         },
+        // {
+        //     _id: 2,
+        //     text: 'Gostaria de um biscoito de chocolate',
+        //     createdAt: new Date(),
+        //     user: client,
+        // },
+        // {
+        //     _id: 3,
+        //     text: 'Produtos disponíveis:',
+        //     quickReplies: {
+        //         type: 'radio', // or 'checkbox',
+        //         keepIt: true,
+        //         values: [
+        //             {
+        //                 title: 'Wafer Aymoré',
+        //                 value: 'wafer-aymore',
+        //             },
+        //             {
+        //                 title: 'Danix',
+        //                 value: 'danix',
+        //             },
+        //             {
+        //                 title: 'Rosquinhas Vilma',
+        //                 value: 'rosquinhas-vilma',
+        //             },
+        //             {
+        //                 title: 'Teens',
+        //                 value: 'teens',
+        //             },
+        //         ],
+        //     },
+        //     createdAt: new Date(),
+        //     user: ericaAssistent,
+        // },
     ]);
 
-    const onSend = (newMessages = []) => {
+    const addMessages = (newMessages = []) => {
         console.log(newMessages);
         setMessages([...messages, ...newMessages]);
         GiftedChat.append(messages, newMessages);
+    };
+
+    const onSend = (newMessages = []) => {
+        addMessages(newMessages);
     };
 
     return (
@@ -70,6 +94,21 @@ export default function EricaBot() {
             messages={messages}
             onSend={onSend}
             inverted={false}
+            onQuickReply={quickReplies => {
+                const message = quickReplies[0];
+
+                if (message.messageId === 4 && message.value === 'sim') {
+                    addMessages([
+                        {
+                            _id: messages.length + 1,
+                            createdAt: new Date(),
+                            text:
+                                'Compra finalizada! Agradecemos a preferência!',
+                            user: ericaAssistent,
+                        },
+                    ]);
+                }
+            }}
             placeholder="O que deseja ?"
             user={{
                 _id: 1,
