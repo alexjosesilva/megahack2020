@@ -14,12 +14,15 @@ import {
     TouchableHighlight,
 } from 'react-native';
 import Voice from '@react-native-community/voice';
+import {useSelector, useDispatch} from 'react-redux';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import logoAmericanas from '../../assets/logo_americanas.png';
 import erica_circulo from '../../assets/erica_circulo.png';
 import mic_entrada from '../../assets/mic_entrada.png';
+
+import {changeProduct} from '../../store';
 
 // const MicModal = ({modalVisible, setModalVisible}) => {
 //     return (
@@ -95,13 +98,20 @@ import mic_entrada from '../../assets/mic_entrada.png';
 
 export default function Home({navigation}) {
     const [modalVisible, setModalVisible] = useState(false);
-    const [text, setText] = useState('');
+    const dispatch = useDispatch();
+    const productName = useSelector(state => {
+        console.log('state', state);
+        return state.name;
+    });
 
     useEffect(() => {
         Voice.onSpeechResults = results => {
-            setText(results.value[0]);
+            dispatch({
+                type: changeProduct.type,
+                payload: {name: results.value[0]},
+            });
         };
-    }, []);
+    }, [dispatch]);
 
     return (
         <View style={styles.container}>
@@ -123,13 +133,18 @@ export default function Home({navigation}) {
                     }
                     underlineColorAndroid="transparent"
                     multiline
-                    value={text}
-                    onChangeText={setText}
+                    value={productName}
+                    onChangeText={text => {
+                        dispatch({
+                            type: changeProduct.type,
+                            payload: {name: text},
+                        });
+                    }}
                 />
                 <TouchableHighlight
                     onPress={() =>
                         navigation.navigate('destaques', {
-                            text,
+                            productName,
                         })
                     }>
                     <Icon

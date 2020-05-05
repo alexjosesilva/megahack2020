@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {GiftedChat} from 'react-native-gifted-chat';
+import {useSelector} from 'react-redux';
 
 const client = {
     _id: 1,
@@ -14,6 +15,7 @@ const ericaAssistent = {
 };
 
 export default function EricaBot() {
+    const productName = useSelector(state => state.name);
     const [messages, setMessages] = useState([
         {
             _id: 1,
@@ -24,7 +26,7 @@ export default function EricaBot() {
         },
         {
             _id: 2,
-            text: `Produto pedido: "Samsung Galaxy A10"
+            text: `Produto pedido: "${productName}"
 Confirma ?`,
             quickReplies: {
                 type: 'radio', // or 'checkbox',
