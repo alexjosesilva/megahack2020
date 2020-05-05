@@ -23,7 +23,7 @@ export default function EricaBot() {
             user: ericaAssistent,
         },
         {
-            _id: 4,
+            _id: 2,
             text: `Produto pedido: "Samsung Galaxy A10"
 Confirma ?`,
             quickReplies: {
@@ -43,40 +43,6 @@ Confirma ?`,
             createdAt: new Date(),
             user: ericaAssistent,
         },
-        // {
-        //     _id: 2,
-        //     text: 'Gostaria de um biscoito de chocolate',
-        //     createdAt: new Date(),
-        //     user: client,
-        // },
-        // {
-        //     _id: 3,
-        //     text: 'Produtos disponíveis:',
-        //     quickReplies: {
-        //         type: 'radio', // or 'checkbox',
-        //         keepIt: true,
-        //         values: [
-        //             {
-        //                 title: 'Wafer Aymoré',
-        //                 value: 'wafer-aymore',
-        //             },
-        //             {
-        //                 title: 'Danix',
-        //                 value: 'danix',
-        //             },
-        //             {
-        //                 title: 'Rosquinhas Vilma',
-        //                 value: 'rosquinhas-vilma',
-        //             },
-        //             {
-        //                 title: 'Teens',
-        //                 value: 'teens',
-        //             },
-        //         ],
-        //     },
-        //     createdAt: new Date(),
-        //     user: ericaAssistent,
-        // },
     ]);
 
     const addMessages = (newMessages = []) => {
@@ -97,7 +63,7 @@ Confirma ?`,
             onQuickReply={quickReplies => {
                 const message = quickReplies[0];
 
-                if (message.messageId === 4 && message.value === 'sim') {
+                if (message.messageId === 2 && message.value === 'sim') {
                     addMessages([
                         {
                             _id: messages.length + 1,
@@ -110,9 +76,7 @@ Confirma ?`,
                 }
             }}
             placeholder="O que deseja ?"
-            user={{
-                _id: 1,
-            }}
+            user={client}
         />
     );
 }
