@@ -1,7 +1,7 @@
-## Intervenção Mobile
+## ÉRICA - SUA ASSISTENTE PESSOAL PARA TUDO DO UNIVERSO AMERICANAS
 
-* Criação do Boot
 * Automatização de Compras Recorrentes
-* Perfil e Compras apartir do histórico de compras do cliente
-
-![](http://i.picasion.com/pic90/87c8bf4947a2e128b06c3d4599f03d24.gif)
+* Érica - Sua assistente pessoal para tudo do Universo Americanas. Na nossa avaliação, o que há de melhor da experiência no mundo digital para disponibilizarmos no mundo físico é a possibilidade de pesquisar, comparar e ler avaliações de produtos com o auxílio de um Assistente Pessoal disponibilizado no aplicativo do smartphone. Esse Assistente Pessoal vai estar preparado para realizar uma comunicação mais assertiva com o consumidor auxiliando-o a decidir por sua compra em lojas físicas.
+<p align="center">
+  <img src="http://i.picasion.com/pic90/59c7e7a7210cd51d7135b806f63ad513.gif" >
+</p>
