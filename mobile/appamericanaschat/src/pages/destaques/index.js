@@ -2,13 +2,17 @@
  * home.js
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
 import homeImage from '../../assets/home.jpeg';
 
-export default function De() {
+export default function De({navigation}) {
+    useEffect(() => {
+        navigation.openDrawer();
+    }, [navigation]);
+
     return (
         <ScrollView>
             <View style={styles.container}>
